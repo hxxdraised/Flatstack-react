@@ -3,7 +3,6 @@ import React, {useState} from 'react'
 import AuthorizeComponent from 'components/AuthorizeComponent'
 import useAuthUser from 'global/AuthUser'
 
-import ProjectsWrapper from 'components/entity/projects/ProjectsWrapper'
 import ProjectCreateForm from 'components/entity/projects/ProjectCard/ProjectCreateForm'
 import ProjectCard from 'components/entity/projects/ProjectCard'
 import ProjectModalCard from 'components/entity/projects/ProjectModalCard'
@@ -32,7 +31,7 @@ function Home() {
   return (
     <div className="p-3 pt-5 w-full">
       <ProjectCreateForm />
-      <ProjectsWrapper>
+      <div className="flex items-start mt-10">
         {user?.projects?.map((project) => (
           <ProjectCard
             key={project.id}
@@ -43,7 +42,7 @@ function Home() {
             onProjectShowClick={() => setProjectModalId(project.id)}
           />
         ))}
-      </ProjectsWrapper>
+      </div>
       {projectModalId && (
         <ProjectModalCard
           project={project()}

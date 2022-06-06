@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 import useCreateProject from 'hooks/mutations/projects/useCreateProject'
 
 import Box from '@mui/material/Box'
-import {Input} from '@mui/material'
+import {Input, Typography} from '@mui/material'
 
 export default function ProjectCreateForm() {
   const [input, setInput] = useState('')
@@ -22,9 +22,12 @@ export default function ProjectCreateForm() {
   }
 
   return (
-    <Box>
+    <Box className="flex items-center">
+      <Typography variant="h5" component="h1">
+        All Projects
+      </Typography>
       {showForm ? (
-        <div>
+        <div className="ml-5">
           <Input
             placeholder="Project Name"
             value={input}
@@ -33,14 +36,14 @@ export default function ProjectCreateForm() {
             }}
           />
           <button
-            className="bg-body-primary px-4 py-2 mx-4 text-text-inversed rounded-lg"
+            className="bg-body-primary px-4 py-2 mx-3 text-text-inversed rounded-lg"
             disabled={disabled}
             onClick={handleClick}
           >
             Create
           </button>
           <button
-            className="bg-body-primary px-4 py-2 text-text-inversed rounded-lg"
+            className="bg-slate-300 px-4 py-2 rounded-lg"
             disabled={disabled}
             onClick={() => setShowForm(false)}
           >
@@ -49,11 +52,11 @@ export default function ProjectCreateForm() {
         </div>
       ) : (
         <button
-          className="bg-body-primary px-4 py-2 text-text-inversed rounded-lg"
+          className="bg-body-primary px-4 py-2 ml-5 text-text-inversed rounded-lg"
           disabled={disabled}
           onClick={() => setShowForm(true)}
         >
-          New Project
+          Add new
         </button>
       )}
     </Box>

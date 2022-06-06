@@ -7,7 +7,8 @@ module.exports = {
         'card-background': '#FFFFFF',
         'body-primary': '#1c6354',
         'navbar-color': '#EEEEEE',
-        'text-inversed': '#EEEEEE'
+        'text-inversed': '#EEEEEE',
+        shadow: '#00000033'
       }
     }
   },

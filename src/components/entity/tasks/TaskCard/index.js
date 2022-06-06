@@ -1,17 +1,14 @@
 import React from 'react'
-
 import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
-import {useStyle} from './components'
 
-export default function TaskCard({title, onTaskShowClick}) {
-  const classes = useStyle()
-
+export default function TaskCard({title, status, onTaskShowClick}) {
   return (
-    <Box onClick={() => onTaskShowClick()} className={classes.root}>
-      <Typography className={classes.title} gutterBottom component="div">
-        {title}
-      </Typography>
+    <Box
+      onClick={() => onTaskShowClick()}
+      className="w-full bg-slate-300 p-3 my-2 rounded-lg"
+    >
+      <h4 className="text-lg font-semibold">{title}</h4>
+      <p className="text-xs">{status}</p>
     </Box>
   )
 }

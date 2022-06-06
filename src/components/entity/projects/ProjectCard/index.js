@@ -4,9 +4,7 @@ import Box from '@material-ui/core/Box'
 import Header from './Header'
 
 import TaskCard from 'components/entity/tasks/TaskCard'
-import TasksCardsWrapper from 'components/entity/tasks/TasksCardsWrapper'
 import TaskCreateForm from 'components/entity/tasks/TaskCreateForm'
-import {useStyle} from './components'
 
 export default function ProjectCard({
   id,
@@ -15,16 +13,15 @@ export default function ProjectCard({
   onTaskShowClick,
   onProjectShowClick
 }) {
-  const classes = useStyle()
-
   return (
-    <Box className={classes.root}>
+    <Box className="w-[300px] p-5 mr-5 shadow-xl shadow-shadow rounded-lg">
       <Header
         id={id}
         name={name}
         onProjectShowClick={onProjectShowClick}
       ></Header>
-      <TasksCardsWrapper>
+      <TaskCreateForm projectId={id} />
+      <div className="flex flex-col">
         {tasks?.map((task) => (
           <TaskCard
             key={task.id}
@@ -37,8 +34,7 @@ export default function ProjectCard({
             }}
           />
         ))}
-      </TasksCardsWrapper>
-      <TaskCreateForm projectId={id} />
+      </div>
     </Box>
   )
 }

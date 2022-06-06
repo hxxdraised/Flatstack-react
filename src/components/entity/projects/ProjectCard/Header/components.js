@@ -5,7 +5,6 @@ export const useStyle = makeStyles(() => ({
     display: 'flex',
     padding: '5px 10px 5px 10px',
     marginBottom: '30px',
-    justifyContent: 'space-between',
     alignItems: 'start',
     minHeight: '40px',
     maxHeight: '300px',
@@ -28,10 +27,8 @@ export const useStyle = makeStyles(() => ({
   name: {
     marginTop: '10px',
     fontWeight: 'bold',
-    fontFamily: 'monospace',
     width: '130px',
-    fontSize: '15px',
-    color: '#ffffff'
+    fontSize: '15px'
   },
 
   icon: {
