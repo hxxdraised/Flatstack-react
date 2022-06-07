@@ -13,11 +13,11 @@ export default function TaskModalCard({userId, task, onCloseModalClick}) {
   return (
     <ModalCard onCloseModalClick={onCloseModalClick}>
       <Box className={classes.root}>
-        <Box>
-          <TaskUpdateForm task={task} />
+        <TaskUpdateForm task={task} />
+        <dic className="px-4">
+          <TaskComments comments={task.comments} />
           <CommentCreateForm userId={userId} taskId={task.id} />
-        </Box>
-        <TaskComments comments={task.comments} />
+        </dic>
       </Box>
     </ModalCard>
   )

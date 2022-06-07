@@ -2,13 +2,9 @@ import React, {useState} from 'react'
 
 import useUpdateProject from 'hooks/mutations/projects/useUpdateProject'
 
-import Box from '@mui/material/Box'
 import CustomAreaField from 'components/entity/mui/CustomAreaField'
-import {useStyle} from './components'
-
 import handleFormChange from 'utils/forms/handleChange'
 import compareFormStates from 'utils/forms/compareFormStates'
-import CustomButton from 'components/entity/mui/CustomButton'
 
 export default function ProjectUpdateForm({project}) {
   const {id, name, description} = project
@@ -28,14 +24,13 @@ export default function ProjectUpdateForm({project}) {
       await updateProject(id, formState.name, formState.description)
     }
   }
-  const classes = useStyle()
 
   return (
-    <Box className={classes.root}>
+    <div className="w-[300px]">
       <CustomAreaField
         id="name"
         label="Name"
-        placeholder="Project Name"
+        placeholder="Project name"
         value={formState.name}
         onBlur={(e) => handleEvent(e)}
         onChange={(e) => handleEvent(e)}
@@ -43,16 +38,19 @@ export default function ProjectUpdateForm({project}) {
       <CustomAreaField
         id="description"
         label="Description"
-        placeholder="Write Description Here ..."
+        placeholder="Description"
         value={formState.description}
         onBlur={(e) => handleEvent(e)}
         onChange={(e) => handleEvent(e)}
         multiline
-        rows={10}
+        rows={5}
       ></CustomAreaField>
-      <CustomButton onClick={() => onUpdateProjectClick()}>
-        Update Project
-      </CustomButton>
-    </Box>
+      <button
+        className="bg-body-primary text-text-inversed px-4 py-2 rounded-lg"
+        onClick={onUpdateProjectClick}
+      >
+        Update project
+      </button>
+    </div>
   )
 }

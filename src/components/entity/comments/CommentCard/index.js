@@ -1,40 +1,34 @@
 import React, {useState} from 'react'
 
 import Box from '@mui/material/Box'
-import IconButton from '@mui/material/IconButton'
 import EditIcon from '@mui/icons-material/Edit'
 import CommentUpdateForm from '../CommentUpdateForm'
-import Typography from '@mui/material/Typography'
-import {useStyle} from './components'
+import UserAvatar from '../../users/UserCard/Avatar'
 
 export default function CommentCard({id, text, creator}) {
   const [showCommentUpdateForm, setShowCommentUpdateForm] = useState(undefined)
-  const classes = useStyle()
 
   return (
-    <Box className={classes.root}>
-      <Box className={classes.sideBar}>
-        <p>
+    <Box className="w-full bg-slate-300 p-3 my-2 rounded-lg">
+      <div className="flex gap-3 items-center">
+        <UserAvatar firstName={creator.firstName} lastName={creator.lastName} />
+        <h3 className=" font-semibold text-lg">
           {creator.firstName} {creator.lastName}
-        </p>
-        <IconButton
-          className={classes.icon}
-          color="info"
-          onClick={() => setShowCommentUpdateForm(true)}
-        >
+        </h3>
+      </div>
+      <Box className="flex items-center gap-2">
+        <p>{text}</p>
+        <button onClick={() => setShowCommentUpdateForm(true)}>
           <EditIcon />
-        </IconButton>
+        </button>
       </Box>
-      <Box>
-        <Typography className={classes.text}>{text}</Typography>
-        {showCommentUpdateForm && (
-          <CommentUpdateForm
-            id={id}
-            text={text}
-            onCloseFormClick={() => setShowCommentUpdateForm(false)}
-          />
-        )}
-      </Box>
+      {showCommentUpdateForm && (
+        <CommentUpdateForm
+          id={id}
+          text={text}
+          onCloseFormClick={() => setShowCommentUpdateForm(false)}
+        />
+      )}
     </Box>
   )
 }

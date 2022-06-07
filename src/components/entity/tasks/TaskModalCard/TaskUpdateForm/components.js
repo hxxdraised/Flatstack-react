@@ -6,14 +6,5 @@ export const useStyle = makeStyles(() => ({
   radioGroup: {
     marginBottom: '10px',
     marginLeft: '5px'
-  },
-
-  radioLabel: {
-    color: 'white',
-    fontWeight: 'bold'
-  },
-
-  radioButton: {
-    color: 'white'
   }
 }))

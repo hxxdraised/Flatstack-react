@@ -2,7 +2,6 @@ import React, {useEffect} from 'react'
 import Box from '@mui/material/Box'
 
 import {useStyle} from './components'
-import IconButton from '@mui/material/IconButton'
 import ClearIcon from '@mui/icons-material/Clear'
 
 export default function ModalCard({onCloseModalClick, children}) {
@@ -20,13 +19,9 @@ export default function ModalCard({onCloseModalClick, children}) {
     <Box className={classes.wrapper}>
       <Box className={classes.root}>
         <Box className={classes.content}>{children}</Box>
-        <IconButton
-          sx={{color: '#912000'}}
-          color="warning"
-          onClick={() => onCloseModalClick(false)}
-        >
+        <button onClick={() => onCloseModalClick(false)}>
           <ClearIcon fontSize="large" />
-        </IconButton>
+        </button>
       </Box>
     </Box>
   )

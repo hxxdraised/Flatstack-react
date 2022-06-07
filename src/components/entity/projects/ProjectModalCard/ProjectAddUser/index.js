@@ -5,7 +5,6 @@ import {useQuery} from '@apollo/client'
 import {USERS} from 'api/query/users'
 
 import Box from '@mui/material/Box'
-import CustomButton from 'components/entity/mui/CustomButton'
 import CustomAreaField from 'components/entity/mui/CustomAreaField'
 import CustomLabel from 'components/entity/mui/CustomLabel'
 // import Typography from '@mui/material/Typography'
@@ -42,15 +41,19 @@ export default function ProjectAddUser({project}) {
       </Box>
       <Box className={classes.form}>
         <CustomAreaField
-          placeholder="Type email here..."
+          placeholder="User email"
           value={email}
           onChange={(e) => {
             setEmail(e.target.value)
           }}
         />
-        <CustomButton disabled={loading} onClick={() => addUserClick()}>
+        <button
+          className="bg-body-primary text-text-inversed px-4 py-2 rounded-lg"
+          disabled={loading}
+          onClick={addUserClick}
+        >
           Add User
-        </CustomButton>
+        </button>
       </Box>
     </Box>
   )

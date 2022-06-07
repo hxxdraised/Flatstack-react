@@ -5,11 +5,9 @@ import Typography from '@mui/material/Typography'
 export default function CustomLabel({label}) {
   const useStyle = makeStyles(() => ({
     label: {
-      color: 'white',
-      fontWeight: 'bold',
-      fontSize: 20,
-      marginLeft: '5px',
-      marginBottom: '5px'
+      fontWeight: 'semi-bold',
+      fontSize: '1rem',
+      marginBottom: '.3rem'
     }
   }))
   const classes = useStyle()

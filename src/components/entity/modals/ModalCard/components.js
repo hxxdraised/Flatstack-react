@@ -8,7 +8,7 @@ export const useStyle = makeStyles(() => ({
     height: ' 100%',
     width: ' 100%',
     overflow: ' hidden',
-    backgroundColor: '#000000e1',
+    backgroundColor: '#000000cc',
     display: ' flex',
     alignItems: ' center',
     justifyContent: ' center',
@@ -18,8 +18,7 @@ export const useStyle = makeStyles(() => ({
     '&::-webkit-scrollbar-thumb': {
       height: '10px',
       width: '10px',
-      borderRadius: '10px',
-      background: 'gray'
+      borderRadius: '10px'
     },
     '&::-webkit-scrollbar': {
       height: '10px',
@@ -35,7 +34,7 @@ export const useStyle = makeStyles(() => ({
     padding: '10px',
     marginRight: '25px',
     borderRadius: '10px',
-    backgroundColor: '#1a1c1e',
+    backgroundColor: '#ffffff',
     overFlow: 'auto',
     display: 'flex',
     alignItems: 'start',

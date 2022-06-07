@@ -8,7 +8,8 @@ module.exports = {
         'body-primary': '#1c6354',
         'navbar-color': '#EEEEEE',
         'text-inversed': '#EEEEEE',
-        shadow: '#00000033'
+        shadow: '#00000033',
+        border: '#919191'
       }
     }
   },

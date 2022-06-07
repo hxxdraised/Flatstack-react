@@ -8,7 +8,6 @@ import RadioGroup from '@mui/material/RadioGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import FormControl from '@mui/material/FormControl'
 import CustomAreaField from 'components/entity/mui/CustomAreaField'
-import CustomButton from 'components/entity/mui/CustomButton'
 import {useStyle} from './components'
 
 import handleFormChange from 'utils/forms/handleChange'
@@ -49,7 +48,7 @@ export default function TaskUpdateForm({task}) {
         <CustomAreaField
           id="description"
           label="Description"
-          placeholder="Write Description Here ..."
+          placeholder="Description"
           value={formState.description}
           onBlur={(e) => handleEvent(e)}
           onChange={(e) => handleEvent(e)}
@@ -85,9 +84,13 @@ export default function TaskUpdateForm({task}) {
             label="Finished"
           />
         </RadioGroup>
-        <CustomButton onClick={() => onUpdateTaskClick()} disabled={loading}>
-          Update Task
-        </CustomButton>
+        <button
+          className="bg-body-primary px-4 py-2 mx-3 text-text-inversed rounded-lg"
+          onClick={() => onUpdateTaskClick()}
+          disabled={loading}
+        >
+          Update task
+        </button>
       </FormControl>
     </Box>
   )

@@ -14,9 +14,9 @@ export default function CustomAreaField({
 }) {
   const useStyle = makeStyles(() => ({
     textField: {
-      backgroundColor: '#6b6867',
-      borderRadius: '10px',
-      marginBottom: '10px',
+      borderRadius: '.5rem',
+      marginBottom: '.7rem',
+      border: '1px solid #919191',
       width: '100%'
     }
   }))
