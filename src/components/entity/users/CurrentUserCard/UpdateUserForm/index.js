@@ -3,9 +3,7 @@ import React, {useEffect, useState} from 'react'
 import useUpdateUser from 'hooks/mutations/users/useUpdateUser'
 
 import Box from '@mui/material/Box'
-import CustomButton from 'components/entity/mui/CustomButton'
 import TextInput from 'components/form/TextInput'
-
 import handleFormChange from 'utils/forms/handleChange'
 import removeEmptyProperties from 'utils/forms/removeEmptyProperties'
 import validateUpdateForm from './utils'
@@ -66,10 +64,13 @@ export default function UpdateUserForm({user}) {
           onChange={(e) => handleEvent(e)}
           autoComplete="off"
         />
-        <Box sx={{mt: 3}}></Box>
-        <CustomButton onClick={(e) => handleUpdateUser(e)} disabled={loading}>
-          Update User
-        </CustomButton>
+        <button
+          className="bg-body-primary text-text-inversed px-4 py-2 rounded-lg"
+          onClick={(e) => handleUpdateUser(e)}
+          disabled={loading}
+        >
+          Update profile
+        </button>
       </form>
     </Box>
   )

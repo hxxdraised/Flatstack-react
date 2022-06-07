@@ -10,10 +10,8 @@ export default function CurrentUserCard({children}) {
         justifyContent="start"
         alignItems="center"
         sx={{
-          bgcolor: '#1a1c1e',
           width: '400px',
-          height: '500px',
-          borderRadius: '10px'
+          height: '500px'
         }}
       >
         {children}

@@ -1,13 +1,12 @@
 import React from 'react'
 
-import Avatar from '@mui/material/Avatar'
-import Typography from '@mui/material/Typography'
+import UserAvatar from '../../UserCard/Avatar'
 import Box from '@material-ui/core/Box'
 import {useStyle} from './components'
 import {Img} from '../../components'
 
 export default function UserHeader({user}) {
-  const {avatarUrl, firstName} = user
+  const {avatarUrl, firstName, lastName} = user
   const classes = useStyle()
 
   return (
@@ -15,11 +14,7 @@ export default function UserHeader({user}) {
       {avatarUrl ? (
         <Img src={avatarUrl} />
       ) : (
-        <Avatar className={classes.avatar}>
-          <Typography className={classes.text}>
-            {firstName ? firstName.charAt(0).toUpperCase() : 'A'}
-          </Typography>
-        </Avatar>
+        <UserAvatar firstName={firstName} lastName={lastName} />
       )}
     </Box>
   )
