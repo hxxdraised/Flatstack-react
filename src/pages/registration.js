@@ -7,7 +7,6 @@ import FormLayout from 'components/layouts/FormLayout'
 import TextInput from 'components/form/TextInput'
 import PasswordInput from 'components/form/PasswordInput'
 import RedirectMessage from 'components/form/RedirectMessage'
-import {SubmitButton} from 'components/button'
 
 import checkEmptyState from 'utils/forms/checkEmptyState'
 import registrationFormValidator from 'validators/formValidators/registrationFormValidator'
@@ -85,9 +84,13 @@ function Registration() {
         onChange={(e) => handleEvent(e)}
         autoComplete="off"
       />
-      <SubmitButton disabled={isSubmit} onClick={handleSubmit}>
-        Create Account
-      </SubmitButton>
+      <button
+        className="bg-body-primary text-text-inversed px-4 py-2 rounded-lg w-full"
+        disabled={isSubmit}
+        onClick={handleSubmit}
+      >
+        Register
+      </button>
       <RedirectMessage
         text="Already a memeber?"
         textAction="Login NOW!"

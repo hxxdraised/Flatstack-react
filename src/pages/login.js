@@ -7,7 +7,6 @@ import FormLayout from 'components/layouts/FormLayout'
 import TextInput from 'components/form/TextInput'
 import PasswordInput from 'components/form/PasswordInput'
 import RedirectMessage from 'components/form/RedirectMessage'
-import {SubmitButton} from 'components/button'
 
 import checkEmptyState from 'utils/forms/checkEmptyState'
 import setEmptyStateErrors from 'utils/forms/setEmptyStateErrors'
@@ -65,12 +64,17 @@ function Login() {
         recovery={true}
         autoComplete="off"
       />
-      <SubmitButton disabled={isSubmit} onClick={handleLogin}>
+      <button
+        className="bg-body-primary text-text-inversed px-4 py-2 rounded-lg w-full"
+        disabled={isSubmit}
+        onClick={handleLogin}
+      >
         Login
-      </SubmitButton>
+      </button>
       <RedirectMessage
-        text="Not a memeber?"
-        textAction="Register NOW!"
+        className="w-full"
+        text="Do not have an account"
+        textAction="Register"
         path="/registration"
       />
     </FormLayout>

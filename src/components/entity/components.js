@@ -1,7 +1,4 @@
-import styled, {keyframes} from 'styled-components'
-import fadeInUp from 'react-animations/lib/fade-in-up'
-
-const fadeInUpAnimation = keyframes`${fadeInUp}`
+import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   align-items: start;
@@ -10,5 +7,4 @@ export const Wrapper = styled.div`
   width: 100%;
   height: 95%;
   padding-top: 10px;
-  animation: 1s ${fadeInUpAnimation};
 `

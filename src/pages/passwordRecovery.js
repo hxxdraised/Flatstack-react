@@ -5,7 +5,6 @@ import useRequestPasswordRecovery from 'hooks/mutations/users/useRequestPassword
 
 import FormLayout from 'components/layouts/FormLayout'
 import TextInput from 'components/form/TextInput'
-import {SubmitButton} from 'components/button/'
 import RedirectMessage from 'components/form/RedirectMessage'
 
 import emailValidator from 'validators/formValidators/inputValidators/emailValidator'
@@ -56,7 +55,12 @@ function PasswordRecovery() {
         onBlur={(e) => handleEvent(e)}
         onChange={(e) => handleEvent(e)}
       />
-      <SubmitButton onClick={handleSubmitClick}>Recover Password</SubmitButton>
+      <button
+        className="bg-body-primary text-text-inversed px-4 py-2 rounded-lg w-full"
+        onClick={handleSubmitClick}
+      >
+        Recover Password
+      </button>
       <RedirectMessage textAction="Back to Login" path="/login" />
     </FormLayout>
   )
